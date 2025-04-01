@@ -1,20 +1,26 @@
-"use client"
+"use client";
 
-import { Input } from "@/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface StyleOption {
-  value: string
-  label: string
-  description: string
+  value: string;
+  label: string;
+  description: string;
 }
 
 interface StyleSelectorProps {
-  selectedStyle: string
-  setSelectedStyle: (style: string) => void
-  customStyle: string
-  setCustomStyle: (style: string) => void
-  predefinedStyles: StyleOption[]
+  selectedStyle: string;
+  setSelectedStyle: (style: string) => void;
+  customStyle: string;
+  setCustomStyle: (style: string) => void;
+  predefinedStyles: StyleOption[];
 }
 
 export function StyleSelector({
@@ -27,7 +33,7 @@ export function StyleSelector({
   return (
     <div className="flex space-x-2 items-center">
       <Select value={selectedStyle} onValueChange={setSelectedStyle}>
-        <SelectTrigger className="w-40 border-none bg-gray-100 text-sm">
+        <SelectTrigger className="w-60 border-none bg-gray-100 text-sm">
           <SelectValue placeholder="変換スタイル" />
         </SelectTrigger>
         <SelectContent>
@@ -51,6 +57,5 @@ export function StyleSelector({
         />
       )}
     </div>
-  )
+  );
 }
-
